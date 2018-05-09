@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo 'update'
+sudo apt-get install libreadline-dev
+
+echo 'get the source'
+wget https://www.sqlite.org/2017/sqlite-autoconf-3160200.tar.gz
+
+echo 'unpack the file'
+tar -xzvf sqlite-autoconf-3160200.tar.gz
+
+echo 'cd to'
+cd sqlite-autoconf-3160200/
+
+echo 'run it'
+./configure
+
+echo 'run with make'
+make
+
+echo' install sqlite'
+sudo make install
+
+echo 'directory'
+which sqlite3
